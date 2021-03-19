@@ -41,15 +41,15 @@ The system is hosted inside a VirtualBox machine.
 
 + **OS**: Arch Linux
 + **WM**: AwesomeWM
-+ **Terminal**: Termite/Alacritty (still choosing)
-+ **Editor**: Nvim
++ **Terminal**: termite
++ **Editor**: nvim
 + **Shell**: zsh
 + **Compositor**: picom
 + **Bars**: None yet
 + **Menu**: None yet
 + **Media**: None yet
 + **File Manager**: None yet
-+ **Browser**: Chromium
++ **Browser**: chromium
 + **Font**: FiraMono (for now)
 + **Memory**: 8GB + 16GB swap (Guest)
 + **CPU**: Intel i7-9750H @ 2.60GHz (Host)
@@ -57,3 +57,4 @@ The system is hosted inside a VirtualBox machine.
 + **Laptop**: MSI GF63 Thin 9SC
 + **Screen Framerate**: 120Hz
 + **Screen Resolution**: 1920x1080
++ **Keyboard**: Ducky One 2 SF 65% MX Red
