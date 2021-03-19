@@ -39,21 +39,21 @@ config push # push changes to remote repository
 ## Some information
 The system is hosted inside a VirtualBox machine.
 
-+**OS**: Arch Linux
-+**WM**: AwesomeWM
-+**Terminal**: Termite/Alacritty (still choosing)
-+**Editor**: Nvim
-+**Shell**: zsh
-+**Compositor**: picom
-+**Bars**: None yet
-+**Menu**: None yet
-+**Media**: None yet
-+**File Manager**: None yet
-+**Browser**: Chromium
-+**Font**: FiraMono (for now)
-+**Memory**: 8GB + 16GB swap (Guest)
-+**CPU**: Intel i7-9750H @ 2.60GHz (Host)
-+**GPU**: NVIDIA GeForce GTX 1650 with Max-Q Design (Host)
-+**Laptop**: MSI GF63 Thin 9SC
-+**Screen Framerate**: 120Hz
-+**Screen Resolution**: 1920x1080
++ **OS**: Arch Linux
++ **WM**: AwesomeWM
++ **Terminal**: Termite/Alacritty (still choosing)
++ **Editor**: Nvim
++ **Shell**: zsh
++ **Compositor**: picom
++ **Bars**: None yet
++ **Menu**: None yet
++ **Media**: None yet
++ **File Manager**: None yet
++ **Browser**: Chromium
++ **Font**: FiraMono (for now)
++ **Memory**: 8GB + 16GB swap (Guest)
++ **CPU**: Intel i7-9750H @ 2.60GHz (Host)
++ **GPU**: NVIDIA GeForce GTX 1650 with Max-Q Design (Host)
++ **Laptop**: MSI GF63 Thin 9SC
++ **Screen Framerate**: 120Hz
++ **Screen Resolution**: 1920x1080
