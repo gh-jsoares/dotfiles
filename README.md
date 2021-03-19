@@ -78,7 +78,7 @@ yay ruby-neovim
 #### Sanity check
 After installing all the modules, let's check nvim. Open nvim and run the `:checkhealth` command. The output should be a bit nicer.
 
-## Some information
+## Some information about my system
 The system is hosted inside a VirtualBox machine.
 
 + **OS**: Arch Linux
