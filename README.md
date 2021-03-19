@@ -36,6 +36,48 @@ config commit -m "<message>" # perform a commit
 config push # push changes to remote repository
 ```
 
+## Installing some tools
+The configs I use belong to tools (obviously). This section will aid with installing the correct tools, assuming you already installed `awesome` and the `xorg` toolsets.
+
+### The editor (nvim)
+The editor I'm using is Neovim v5.0 (the nightly build). Currently this build isn't the default build, so in order to install it we need to run the following command:
+```bash
+yay neovim-nightly-bin
+```
+If you open nvim and run `:checkhealth` you are probably missing some important stuff. For that we will need to install python3, pip3, node (yarn), ruby and the corresponding modules.
+Let's start.
+
+#### Python module
+To install both python3, pip3 and pynvim we can run the following command:
+```bash
+sudo pacman -S python python-pip python-pynvim
+```
+
+#### Node module
+I use a [node version manager (nvm)](https://github.com/nvm-sh/nvm) to manage my node installation. Their instructions are quite easy to follow. We just need to run the following set of commands:
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+After installing it, we need to reload our .zshrc config by running `source $HOME/.zshrc`. Then we can finally install the latest stable build by executing the following command:
+```bash
+nvm install --lts
+```
+
+After we have node installed, I also like to install yarn. We will also install the nvim module:
+```bash
+npm i -g yarn neovim
+```
+
+#### Ruby module
+To install the ruby module we can just pull from the AUR. We will use the following command:
+```bash
+yay ruby-neovim
+```
+#### Sanity check
+After installing all the modules, let's check nvim. Open nvim and run the `:checkhealth` command. The output should be a bit nicer.
+
 ## Some information
 The system is hosted inside a VirtualBox machine.
 
