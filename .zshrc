@@ -96,8 +96,8 @@ fi
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias ll="exa --git -lah"
 alias cp="cp -iv"
@@ -105,6 +105,8 @@ alias mv="mv -iv"
 alias rm="rm -iv"
 alias rm="rm -iv"
 alias cat="bat -p"
+alias vi="nvim"
+alias vim="nvim"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
