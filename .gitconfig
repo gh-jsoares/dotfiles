@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = jsoares.public@gmail.com
+	name = João Soares
+[pull]
+	rebase = false
