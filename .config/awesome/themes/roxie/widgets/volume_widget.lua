@@ -1,14 +1,14 @@
 local wibox = require('wibox')
-local beautiful = require('beautiful')
 local gears = require('gears')
+local naughty = require('naughty')
 
 local ICON_DIR = os.getenv('HOME') .. '/.config/awesome/themes/roxie/icons/'
 
 local widget = {}
 
-function widget.get_widget()
-    local main_color = beautiful.fg_normal
-    local mute_color = beautiful.fg_urgent
+function widget.get_widget(theme)
+    local main_color = theme.fg_normal
+    local mute_color = theme.fg_urgent
     local bg_color = '#ffffff11'
     local width = 30
     local margins = 7
@@ -59,6 +59,7 @@ function widget.get_widget()
         unmute = function(self)
 		self.muted = false
             	self:get_children_by_id('bar')[1]:set_color(main_color)
+            	--self:get_children_by_id('bar')[1]:set_color("#ffffff")
         end
     }
 

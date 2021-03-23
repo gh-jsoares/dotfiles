@@ -131,6 +131,8 @@ local memory = lain.widget.mem({
     end
 })
 
+theme.volume = volume_widget(theme)
+
 function theme.at_screen_connect(s)
     -- If wallpaper is a function, call it with the screen
     local wallpaper = theme.wallpaper
@@ -167,7 +169,7 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-	    volume_widget(),
+	    theme.volume,
             memicon,
             memory.widget,
             cpuicon,

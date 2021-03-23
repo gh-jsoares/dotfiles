@@ -7,13 +7,15 @@ local GET_VOLUME_CMD = 'amixer -D pulse sget Master'
 local INC_VOLUME_CMD = 'amixer -D pulse sset Master 5%+'
 local DEC_VOLUME_CMD = 'amixer -D pulse sset Master 5%-'
 local TOG_VOLUME_CMD = 'amixer -D pulse sset Master toggle'
+local MAX_VOLUME_CMD = 'amixer -D pulse sset Master 100%'
+local ZERO_VOLUME_CMD = 'amixer -D pulse sset Master 0%'
 
 local volume = {}
 
-local function worker()
-    local refresh_rate = 0.3
+local function worker(theme)
+    local refresh_rate = 1
 
-    volume.widget = horizontal_bar.get_widget()
+    volume.widget = horizontal_bar.get_widget(theme)
     local volume_level = 0
 
     local function update_graphic(widget, stdout)
@@ -39,6 +41,20 @@ local function worker()
     function volume:toggle()
         spawn.easy_async(TOG_VOLUME_CMD, function(stdout) update_graphic(volume.widget, stdout) end)
     end
+
+    function volume:max()
+        spawn.easy_async(MAX_VOLUME_CMD, function(stdout) update_graphic(volume.widget, stdout) end)
+    end
+
+    function volume:zero()
+        spawn.easy_async(ZERO_VOLUME_CMD, function(stdout) update_graphic(volume.widget, stdout) end)
+    end
+
+    volume.widget.inc = volume.inc
+    volume.widget.dec = volume.dec
+    volume.widget.toggle = volume.toggle
+    volume.widget.max = volume.max
+    volume.widget.zero = volume.zero
 
     volume.widget:buttons(
             awful.util.table.join(
