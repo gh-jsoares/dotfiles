@@ -50,7 +50,13 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "unclutter -root" }) -- entries must be separated by commas
+run_once({
+	"unclutter -root",
+	"xset -b",
+	"vmtoolsd -n vmusr",
+	"picom -b --config $HOME/.config/picom.conf",
+	"nitrogen --restore"
+}) -- entries must be separated by commas
 
 -- }}}
 
@@ -72,11 +78,11 @@ local themes = {
 local chosen_theme = themes[5]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "termite"
+local terminal     = "alacritty"
 local vi_focus     = false -- vi-like client focus - https://github.com/lcpz/awesome-copycats/issues/275
 local cycle_prev   = true -- cycle trough all previous client or just the first -- https://github.com/lcpz/awesome-copycats/issues/274
-local editor       = os.getenv("EDITOR") or "vim"
-local gui_editor   = os.getenv("GUI_EDITOR") or "gvim"
+local editor       = os.getenv("EDITOR") or "nvim"
+local gui_editor   = os.getenv("GUI_EDITOR") or "nvim"
 local browser      = os.getenv("BROWSER") or "firefox"
 local scrlocker    = "slock"
 
@@ -707,7 +713,3 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
-awful.spawn.with_shell("VBoxClient-all")
-awful.spawn.with_shell("picom -b --config $HOME/.config/picom.conf")
-awful.spawn.with_shell("nitrogen --restore")
