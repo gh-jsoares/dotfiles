@@ -54,8 +54,8 @@ run_once({
 	"unclutter -root",
 	"xset -b",
 	"vmtoolsd -n vmusr",
-	"picom -b --config $HOME/.config/picom.conf",
-	"nitrogen --restore"
+	"picom -b --config $HOME/.config/picom.conf"
+	--"nitrogen --restore"
 }) -- entries must be separated by commas
 
 -- }}}
